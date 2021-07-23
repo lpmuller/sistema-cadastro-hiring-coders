@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Sistema de Cadastro</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="header-titulo">Sistema de cadastro</h1>
+        <nav class="lista-navegacao">
+            <a class="lista-navegacao-itens" href="clientes.html">Clientes</a>
+            <a class="lista-navegacao-itens" href="produtos.html">Produtos</a>
+            <a class="lista-navegacao-itens" href="#"><img src="./assets/icone-usuario.svg" alt="Ícone usuário"></a>
+        </nav>
+    </header>
+    <a href="index.html"><button class="botao-secundario" id="botao-home">Home</button></a>
+    <section class="produtos">
+        <div class="cadastro-container secao-padrao">
+            <h2 class="titulo-padrao">Produtos</h2>
+            <div id="form-produto-content">
+                <form id="form-produto">
+                    <div class="input-container">
+                        <label class="cadastro-label" for="nome-produto">Nome</label>
+                        <input type="text" class="cadastro-input" id="nome-produto" placeholder="Nome do produto">
+                    </div>
+                    <div class="input-container">
+                        <label class="cadastro-label" for="marca">Marca</label>
+                        <input type="text" class="cadastro-input" id="marca" placeholder="Marca do produto">
+                    </div>
+                    <div class="input-container">
+                        <label class="cadastro-label" for="sku">SKU</label>
+                        <input type="text" class="cadastro-input" id="sku" placeholder="XX0000-00">
+                    </div>
+                    <div class="input-container">
+                        <label class="cadastro-label" for="categoria">Categoria</label>
+                        <select class="cadastro-input" id="categoria">
+                            <option value="A">Categoria A</option>
+                            <option value="B">Categoria B</option>
+                            <option value="C">Categoria C</option>
+                        </select>
+                    </div>
+                    <div class="input-container">
+                        <label class="cadastro-label" for="quantidade">Quantidade</label>
+                        <input type="number" class="cadastro-input" id="quantidade">
+                    </div>
+                    <div class="input-container">
+                        <label class="cadastro-label" for="preco">Preço</label>
+                        <input type="text" class="cadastro-input" id="preco" placeholder="R$ 0.00">
+                    </div>
+                    <div class="submit-container">
+                        <input type="reset" class="botao-secundario" value="Limpar">
+                        <input type="submit" class="botao-principal" value="Cadastrar">
+                    </div>
+                </form>
+                <p id="mensagem-produto"></p>
+            </div>
+    </section>
+</body>
+<script src="js/cadastrarProduto.js"></script>
+
+</html>

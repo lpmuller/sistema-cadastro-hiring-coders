@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Sistema de Cadastro</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="header-titulo">Sistema de cadastro</h1>
+        <nav class="lista-navegacao">
+            <a class="lista-navegacao-itens" href="clientes.html">Clientes</a>
+            <a class="lista-navegacao-itens" href="produtos.html">Produtos</a>
+            <a class="lista-navegacao-itens" href="#"><img src="./assets/icone-usuario.svg" alt="Ícone usuário"></a>
+        </nav>
+    </header>
+    <a href="index.html"><button class="botao-secundario" id="botao-home">Home</button></a>
+    <section class="clientes">
+        <div class="cadastro-container secao-padrao">
+            <h2 class="titulo-padrao">Clientes</h2>
+            <div id="form-cliente-content">
+                <form id="form-cliente">
+                    <div class="input-container">
+                        <label class="cadastro-label" for="nome">Nome</label>
+                        <input type="text" class="cadastro-input" id="nome" placeholder="Nome Completo">
+                    </div>
+                    <div class="input-container">
+                        <label class="cadastro-label" for="email">E-mail</label>
+                        <input type="email" class="cadastro-input" id="email" placeholder="nome@email.com">
+                    </div>
+                    <div class="input-container">
+                        <label class="cadastro-label" for="cpf">CPF</label>
+                        <input type="text" class="cadastro-input" id="cpf" placeholder="000.000.000-00">
+                    </div>
+                    <div class="input-container">
+                        <label class="cadastro-label" for="nascimento">Data de nascimento</label>
+                        <input type="date" class="cadastro-input" id="nascimento">
+                    </div>
+                    <div class="input-container">
+                        <label class="cadastro-label" for="email">Telefone</label>
+                        <input type="tel" class="cadastro-input" id="telefone" placeholder="(00)0000-0000">
+                    </div>
+                    <div class="input-container">
+                        <label class="cadastro-label" for="cep">CEP</label>
+                        <input type="text" class="cadastro-input" id="cep" placeholder="00000-000">
+                    </div>
+                    <div class="input-container">
+                        <label class="cadastro-label" id="label-endereco" for="endereco">Endereço</label>
+                        <input type="text" class="cadastro-input" id="endereco">
+                    </div>
+                    <div class="input-container">
+                        <label class="cadastro-label" for="complemento">Número e complemento</label>
+                        <input type="text" class="cadastro-input" id="complemento">
+                    </div>
+                    <div class="input-container">
+                        <label class="cadastro-label" for="bairro">Bairro</label>
+                        <input type="text" class="cadastro-input" id="bairro">
+                    </div>
+                    <div class="input-container">
+                        <label class="cadastro-label" for="cidade">Cidade</label>
+                        <input type="text" class="cadastro-input" id="cidade">
+                    </div>
+                    <div class="input-container">
+                        <label class="cadastro-label" for="uf">UF</label>
+                        <input type="text" class="cadastro-input" id="uf">
+                    </div>
+                    <div class="submit-container">
+                        <input type="reset" class="botao-secundario" value="Limpar">
+                        <input type="submit" class="botao-principal" value="Cadastrar">
+                    </div>
+                </form>
+                <p id="mensagem-cliente"></p>
+            </div>
+    </section>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+<script>
+    $("#cep").blur(function () {
+        var cep = this.value.replace(/[^0-9]/, "");
+        if (cep.length != 8) {
+            return false;
+        }
+        var url = "https://viacep.com.br/ws/" + cep + "/json/";
+
+        $.getJSON(url, function (dadosRetorno) {
+            try {
+                $("#endereco").val(dadosRetorno.logradouro);
+                $("#bairro").val(dadosRetorno.bairro);
+                $("#cidade").val(dadosRetorno.localidade);
+                $("#uf").val(dadosRetorno.uf);
+            } catch (ex) { }
+        });
+    });
+</script>
+<script src="js/cadastrarCliente.js"></script>
+<script src="js/validaCEP.js"></script>
+
+</html>

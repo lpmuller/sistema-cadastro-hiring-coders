@@ -1,0 +1,136 @@
+/*Geral*/
+:root {
+    --preto: #0D0D0D;
+    --branco: #F2F2F2; 
+    --cinza: #BFBFBF;    
+    --roxo: #3A1772;    
+    --rosa: #FF4365;
+    --laranja: #FF725E;    
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--branco);  
+}
+.titulo-padrao {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--roxo);
+}
+.secao-padrao {
+    padding: 20px;
+    margin: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid var(--roxo);
+}
+
+/*Header*/
+header {
+    background-color: var(--roxo);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+    border-bottom: 3px solid var(--laranja);  
+}
+.header-titulo {
+    color: var(--branco);
+	font-weight: 700;
+	font-size: 22px;
+    margin:10px 8px;
+    text-decoration: none;
+}
+.lista-navegacao {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+}
+.lista-navegacao-itens {
+    color: var(--branco);
+	font-weight: 300;
+    text-decoration: none;	
+    display: inline-block;
+    margin:0 5px;
+}
+
+/* Home */
+.botao-container{
+    height: 90vh;
+    padding: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.botao-cadastro {    
+    height: 4rem;
+    background-color: var(--rosa);
+    font-weight: 700;
+    color: var(--branco);
+    padding: 20px 20px;
+    border-radius: 10px;
+    border: 1px solid var(--rosa);
+    font-size: 1.5rem;
+}
+
+/*Cadastro*/
+.cadastro-label {
+    display: block;
+    margin: 0 2px;
+}
+.cadastro-input {
+    display: inline;
+	margin: 0.5rem 2px;
+    height: 1.5rem;
+    width: 100%;
+    padding: 2px;	
+    border-radius: 5px;
+    border: 1px solid var(--cinza);
+}
+.botao-principal { 
+    min-height: 2rem;
+    background-color: var(--rosa);
+    font-weight: 700;
+    color: var(--branco);
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid var(--rosa);
+}
+.botao-secundario {    
+    min-height: 2rem;
+    background-color: var(--branco);
+    font-weight: 700;
+    color: var(--rosa);
+    padding: 10px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    border: 1px solid var(--rosa);
+}
+
+#botao-home {
+    margin: 10px 0 0 20px;
+}
+
+/*Responsividade*/
+@media screen and (min-width: 620px){  
+    .header-titulo {
+        margin: 15px;
+    }
+    .lista-navegacao-itens{
+        margin: 0 15px;
+    }  
+    .cadastro-label {
+        display: inline-block;
+        margin: 0 2px;
+    }
+    .cadastro-input {
+        width: auto;
+    } 
+    .input-container {
+        display: inline-block;
+    } 
+    #nome-produto{
+        min-width: 300px;
+    }
+}  
